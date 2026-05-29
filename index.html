@@ -23,6 +23,7 @@ body{
 }
 
 /* BACKGROUND */
+
 body::before{
     content:'';
     position:fixed;
@@ -35,6 +36,7 @@ body::before{
 }
 
 /* FLOATING HEARTS */
+
 .hearts{
     position:fixed;
     inset:0;
@@ -50,15 +52,51 @@ body::before{
 }
 
 @keyframes float{
+
     from{
         transform:translateY(100vh) scale(0.5);
     }
+
     to{
         transform:translateY(-120vh) scale(1.2);
     }
+
+}
+
+/* FIREWORKS */
+
+.fireworks{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.firework{
+    position:absolute;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    animation:explode 1.5s ease-out infinite;
+}
+
+@keyframes explode{
+
+    0%{
+        transform:scale(0);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(15);
+        opacity:0;
+    }
+
 }
 
 /* HERO */
+
 .hero{
     min-height:100vh;
     display:flex;
@@ -83,6 +121,7 @@ body::before{
 }
 
 /* IMAGE */
+
 img{
     width:900px;
     max-width:92%;
@@ -93,7 +132,91 @@ img{
     box-shadow:0 0 30px #ff4f9a55;
 }
 
+/* HEART TREE */
+
+.tree-section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:80px 20px;
+}
+
+.tree{
+    position:relative;
+    width:320px;
+    height:420px;
+}
+
+.trunk{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:55px;
+    height:170px;
+    background:#5c2b00;
+    border-radius:20px;
+}
+
+.branch{
+    position:absolute;
+    background:#5c2b00;
+    border-radius:20px;
+}
+
+.branch1{
+    width:120px;
+    height:18px;
+    left:40px;
+    bottom:180px;
+    transform:rotate(-30deg);
+}
+
+.branch2{
+    width:120px;
+    height:18px;
+    right:40px;
+    bottom:210px;
+    transform:rotate(30deg);
+}
+
+.branch3{
+    width:100px;
+    height:18px;
+    left:55px;
+    bottom:260px;
+    transform:rotate(-20deg);
+}
+
+.branch4{
+    width:100px;
+    height:18px;
+    right:55px;
+    bottom:280px;
+    transform:rotate(20deg);
+}
+
+.heart-leaf{
+    position:absolute;
+    font-size:34px;
+    animation:pulse 2s infinite;
+    filter:drop-shadow(0 0 10px #ff4f9a);
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
+
+}
+
 /* LOVE LETTER */
+
 .letter{
     padding:80px 20px;
     display:flex;
@@ -122,6 +245,7 @@ img{
 }
 
 /* MOBILE OPTIMIZATION */
+
 @media (max-width:1080px){
 
     .hero{
@@ -157,6 +281,7 @@ img{
     .letter-box p{
         font-size:18px;
     }
+
 }
 
 </style>
@@ -166,14 +291,46 @@ img{
 
 <div class="hearts" id="hearts"></div>
 
+<div class="fireworks" id="fireworks"></div>
+
 <section class="hero">
 
 <h1>Happy Birthday NUSRAT 🫶🎀</h1>
+
 <p>To my Tomato ❤️</p>
 
 </section>
 
 <img src="nus.jpg" alt="Nusrat">
+
+<!-- HEART TREE -->
+
+<section class="tree-section">
+
+<div class="tree">
+
+<div class="trunk"></div>
+
+<div class="branch branch1"></div>
+<div class="branch branch2"></div>
+<div class="branch branch3"></div>
+<div class="branch branch4"></div>
+
+<div class="heart-leaf" style="top:40px; left:120px; color:#ff2d75;">❤</div>
+<div class="heart-leaf" style="top:70px; left:70px; color:#ff4f9a;">❤</div>
+<div class="heart-leaf" style="top:80px; right:70px; color:#ff7eb6;">❤</div>
+<div class="heart-leaf" style="top:120px; left:40px; color:#ff2d75;">❤</div>
+<div class="heart-leaf" style="top:120px; right:40px; color:#ff4f9a;">❤</div>
+<div class="heart-leaf" style="top:150px; left:110px; color:#ff7eb6;">❤</div>
+<div class="heart-leaf" style="top:170px; right:110px; color:#ff2d75;">❤</div>
+<div class="heart-leaf" style="top:210px; left:80px; color:#ff4f9a;">❤</div>
+<div class="heart-leaf" style="top:220px; right:80px; color:#ff7eb6;">❤</div>
+
+</div>
+
+</section>
+
+<!-- LOVE LETTER -->
 
 <section class="letter">
 
@@ -182,21 +339,19 @@ img{
 <h2>💌 Love Letter</h2>
 
 <p>
-happy birthday myyyyy jaaaaannnnnnuuuuuuuuuuu😘💗💞💝🎀🫶
+
+প্রিয় জান, 💖
 <br><br>
-I want to stay with you until my last breath ❤️
+
+তোমাকে কীভাবে ভালোবাসি সেটা হয়তো শব্দে পুরোপুরি কখনো বোঝাতে পারবো না। তুমি আমার জীবনের সেই সুন্দর অনুভূতি, যেটা প্রতিদিন আমার মুখে হাসি এনে দেয়।
 <br><br>
-Loooovvvvvvvvvveeeeeeeeeee U Wifyyyyy🫶💗🎀<br><br>
-    প্রিয় জান, 💖
 
-তোমাকে কীভাবে ভালোবাসি সেটা হয়তো শব্দে পুরোপুরি কখনো বোঝাতে পারবো না। তুমি আমার জীবনের সেই সুন্দর অনুভূতি, যেটা প্রতিদিন আমার মুখে হাসি এনে দেয়। তোমার সাথে কথা বললে মনে হয় পৃথিবীর সব চিন্তা দূরে চলে যায়।
+তুমি আমার সুখ, আমার শান্তি, আমার সবচেয়ে আপন মানুষ। আমি শুধু চাই সবসময় তোমার পাশে থাকতে।
+<br><br>
 
-তুমি আমার জীবনে আসার পর সবকিছু যেন আরও সুন্দর হয়ে গেছে। তোমার হাসি, তোমার রাগ, তোমার অভিমান — সবকিছুই আমার কাছে ভীষণ প্রিয়। আমি শুধু চাই সবসময় তোমার পাশে থাকতে, তোমার হাতটা ধরে জীবনের প্রতিটা পথ একসাথে চলতে।
+তোমাকে অনেক অনেক ভালোবাসি জান ❤️
+<br><br>
 
-যখনই মন খারাপ হয়, শুধু তোমার কথা ভাবলেই শান্তি পাই। তুমি আমার সুখ, আমার শান্তি, আমার সবচেয়ে আপন মানুষ। আমি জানি না ভবিষ্যৎ কী লিখে রেখেছে, কিন্তু আমি সবসময় চাই আমার প্রতিটা আগামীতে তুমি থাকো।
-
-তোমাকে অনেক অনেক ভালোবাসি জান। ❤️
-সবসময় তোমারই,
 তোমার পাগল 💌
 
 </p>
@@ -207,7 +362,7 @@ Loooovvvvvvvvvveeeeeeeeeee U Wifyyyyy🫶💗🎀<br><br>
 
 <script>
 
-/* HEARTS */
+/* FLOATING HEARTS */
 
 const heartsContainer = document.getElementById('hearts');
 
@@ -228,6 +383,33 @@ heart.style.fontSize = (Math.random()*20+15) + 'px';
 heartsContainer.appendChild(heart);
 
 }
+
+/* FIREWORKS */
+
+const fireworks = document.getElementById('fireworks');
+
+function createFirework(){
+
+const firework = document.createElement('div');
+
+firework.classList.add('firework');
+
+firework.style.left = Math.random()*100 + 'vw';
+
+firework.style.top = Math.random()*70 + 'vh';
+
+firework.style.background =
+`hsl(${Math.random()*360},100%,70%)`;
+
+fireworks.appendChild(firework);
+
+setTimeout(()=>{
+firework.remove();
+},1500);
+
+}
+
+setInterval(createFirework,300);
 
 </script>
 
