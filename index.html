@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -49,8 +50,12 @@ body::before{
 }
 
 @keyframes float{
-    from{transform:translateY(100vh) scale(0.5);}
-    to{transform:translateY(-120vh) scale(1.2);}
+    from{
+        transform:translateY(100vh) scale(0.5);
+    }
+    to{
+        transform:translateY(-120vh) scale(1.2);
+    }
 }
 
 /* HERO */
@@ -77,27 +82,15 @@ body::before{
     color:#ffd6e8;
 }
 
-/* COUNTDOWN */
-.countdown{
-    margin-top:40px;
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.box{
-    background:rgba(255,255,255,0.08);
-    padding:20px;
-    border-radius:20px;
-    width:120px;
-    backdrop-filter:blur(10px);
-    border:1px solid #ff6aa955;
-}
-
-.box h2{
-    font-size:40px;
-    color:#ffb6d9;
+/* IMAGE */
+img{
+    width:900px;
+    max-width:92%;
+    height:auto;
+    display:block;
+    margin:40px auto;
+    border-radius:25px;
+    box-shadow:0 0 30px #ff4f9a55;
 }
 
 /* LOVE LETTER */
@@ -113,6 +106,7 @@ body::before{
     border:1px solid #ff99cc55;
     padding:40px;
     border-radius:30px;
+    backdrop-filter:blur(10px);
 }
 
 .letter-box h2{
@@ -121,16 +115,50 @@ body::before{
     font-size:50px;
 }
 
-/* CANDLES */
-.candles{
-    position:fixed;
-    bottom:0;
-    width:100%;
-    display:flex;
-    justify-content:space-around;
-    font-size:50px;
-    padding:10px;
+.letter-box p{
+    font-size:20px;
+    line-height:1.8;
+    text-align:center;
 }
+
+/* MOBILE OPTIMIZATION */
+@media (max-width:1080px){
+
+    .hero{
+        padding:30px 15px;
+    }
+
+    .hero h1{
+        font-size:52px;
+        line-height:1.2;
+    }
+
+    .hero p{
+        font-size:20px;
+    }
+
+    img{
+        max-width:95%;
+        margin:30px auto;
+    }
+
+    .letter{
+        padding:50px 15px;
+    }
+
+    .letter-box{
+        padding:30px 20px;
+    }
+
+    .letter-box h2{
+        font-size:38px;
+    }
+
+    .letter-box p{
+        font-size:18px;
+    }
+}
+
 </style>
 </head>
 
@@ -141,25 +169,18 @@ body::before{
 <section class="hero">
 
 <h1>Happy Birthday NUSRAT 🫶🎀</h1>
-<p>To my Tomato ❤️ </p>
-
-<div class="countdown">
-<div class="box"><h2 id="days">00</h2><span>DAYS</span></div>
-<div class="box"><h2 id="hours">00</h2><span>HOURS</span></div>
-<div class="box"><h2 id="minutes">00</h2><span>MINUTES</span></div>
-<div class="box"><h2 id="seconds">00</h2><span>SECONDS</span></div>
-</div>
+<p>To my Tomato ❤️</p>
 
 </section>
 
-<section class="gallery">
-<img src="photo1.jpg" alt="">
-<img src="photo2.jpg" alt="">
-</section>
+<img src="nus.jpg" alt="Nusrat">
 
 <section class="letter">
+
 <div class="letter-box">
+
 <h2>💌 Love Letter</h2>
+
 <p>
 happy birthday myyyyy jaaaaannnnnnuuuuuuuuuuu😘💗💞💝🎀🫶
 <br><br>
@@ -167,54 +188,36 @@ I want to stay with you until my last breath ❤️
 <br><br>
 Loooovvvvvvvvvveeeeeeeeeee U Wifyyyyy🫶💗🎀
 </p>
+
 </div>
+
 </section>
-
-
 
 <script>
 
 /* HEARTS */
+
 const heartsContainer = document.getElementById('hearts');
 
 for(let i=0;i<40;i++){
+
 const heart = document.createElement('div');
+
 heart.classList.add('heart');
+
 heart.innerHTML = '❤';
+
 heart.style.left = Math.random()*100 + 'vw';
+
 heart.style.animationDuration = (Math.random()*5+5) + 's';
+
 heart.style.fontSize = (Math.random()*20+15) + 'px';
+
 heartsContainer.appendChild(heart);
+
 }
 
-/* FIXED COUNTDOWN */
-const birthday = new Date("2026-06-02T00:00:00").getTime();
-
-setInterval(()=>{
-const now = new Date().getTime();
-const distance = birthday - now;
-
-const days = Math.floor(distance / (1000*60*60*24));
-const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-const seconds = Math.floor((distance % (1000*60)) / 1000);
-
-document.getElementById('days').innerText = days;
-document.getElementById('hours').innerText = hours;
-document.getElementById('minutes').innerText = minutes;
-document.getElementById('seconds').innerText = seconds;
-},1000);
-
 </script>
-<style>
-   img {
-  width: 1000px;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: auto;
-} 
-    </style>
-<img src="nus.jpg" >
+
 </body>
 </html>
